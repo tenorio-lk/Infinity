@@ -1,9 +1,13 @@
 import React from 'react';
 import './App.scss';
 
+import Layout from './components/Layout/Layout'
+
 function App() {
   return (
-    <h1>YouTubeAPI</h1>
+    <Layout>
+      <p>Pages</p>
+    </Layout>
   );
 }
 
