@@ -1,0 +1,10 @@
+.search-Result {
+
+    @media (min-width: 768px) {
+        &__list {
+            padding-top: 2rem;
+            margin: auto;
+            width: 75%;
+        }
+    }
+}

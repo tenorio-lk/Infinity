@@ -1,0 +1,21 @@
+$theme-colors: (
+    "primary": #a7afa6,
+    "secondary": #e7e3ee,
+    "third": #c42200,
+    "fourth": #5c0100,
+    "fifth": #cea000
+);
+
+@import 'bootstrap/scss/bootstrap';
+
+// // Required
+// @import "../node_modules/bootstrap/scss/functions";
+// @import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/mixins";
+
+// // Optional
+// @import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/type";
+// @import "../node_modules/bootstrap/scss/images";
+// @import "../node_modules/bootstrap/scss/code";
+// @import "../node_modules/bootstrap/scss/grid";
