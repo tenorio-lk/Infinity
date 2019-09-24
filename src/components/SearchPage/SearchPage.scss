@@ -1,0 +1,21 @@
+.search-page {
+    &__layout {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        height: calc(100vh - 57.5px);
+
+        & > * { //The Containers Rows
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__logo {
+        padding-bottom: 1rem;
+    }
+
+    &__image {
+        width: 100%;
+    }
+}

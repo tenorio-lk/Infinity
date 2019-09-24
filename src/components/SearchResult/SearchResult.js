@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Layout from '../Layout/Layout'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { basicData } from '../../helper/AuthAPI/AuthAPI'
 import { Container, Row, Col, Card, CardBody, CardTitle, CardText, CardImg } from 'reactstrap'
 import './SearchResult.scss'

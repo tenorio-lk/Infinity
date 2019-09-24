@@ -1,32 +1,27 @@
 import React, { Component } from 'react'
 import Layout from '../Layout/Layout'
 import SearchInput from '../SearchInput/SearchInput'
-import VideoPlayer from '../VideoPlayer/VideoPlayer'
+import logo from '../../assets/InfinityLogo2.png'
+import './SearchPage.scss'
+import { Container, Col, Row } from 'reactstrap'
 
 class searchPage extends Component {
-    state = {
-        videos: []
-    }
 
     render(){
-        const { videos } = this.state
-        let displayVideos = null
-        if (videos) {
-            displayVideos = videos.map(item => {
-                return (
-                    <div className="video" key={item.id.videoId}>
-                        <VideoPlayer videoID={item.id.videoId} />       
-                    </div>
-                )
-            })
-        }
-
         return(
             <Layout displaySearch={false}>
-                <SearchInput />
-                <div className="videos">
-                    {displayVideos}
-                </div>
+                <Container className="search-page__layout">
+                    <Row className="search-page__logo">
+                        <Col md="8" xl="4">
+                            <img src={logo} alt="Infinity logo" className="search-page__image" />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md="10" xl="8">
+                            <SearchInput className="search-page__input" />
+                        </Col>
+                    </Row>
+                </Container>
             </Layout>
         )
     }
