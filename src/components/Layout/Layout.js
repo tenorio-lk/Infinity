@@ -2,6 +2,7 @@ import React from 'react'
 
 import Aux from '../../hoc/Aux/Aux'
 import Toolbar from '../Toolbar/Toolbar'
+import './Layout.scss'
 
 const layout = props => (
     <Aux>
