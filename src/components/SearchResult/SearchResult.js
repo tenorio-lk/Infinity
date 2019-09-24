@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Layout from '../Layout/Layout'
-import { NavLink } from 'react-router-dom'
 import { basicData } from '../../helper/AuthAPI/AuthAPI'
-import { Container, Row, Col, Card, CardBody, CardTitle, CardText, CardImg } from 'reactstrap'
+import VideoCard from '../VideoCard/VideoCard'
 import './SearchResult.scss'
 
 const SUCCESFUL = 200
@@ -33,10 +32,6 @@ class searchResult extends Component {
     }
   }
 
-  ellipsisText = (maxLength, text) => {
-    return text.slice(0, maxLength) + "..."
-  }
-
   render() {
     const { videos } = this.state
     const { match: { params } } = this.props
@@ -44,30 +39,7 @@ class searchResult extends Component {
 
     if (videos) {
       searchResult = videos.map(item => {
-        return (
-          <NavLink to={`/video-display/${item.id.videoId}`} params={{test: "testa"}} key={item.id.videoId} >
-            <Card>
-              <Container>
-                <Row>
-                  <Col xs="4">
-                    <CardImg top width="100%" src={item.snippet.thumbnails.medium.url} alt="Video image" />
-                  </Col>
-                  <Col xs="8">
-                    <CardBody>
-                      <CardTitle>{item.snippet.title} (time)</CardTitle>
-                      <CardText>{this.ellipsisText(125, item.snippet.description)}</CardText>
-                      <CardText>
-                        <small className="text-muted">
-                          Published on: {new Date(item.snippet.publishedAt).toLocaleDateString()}
-                        </small>
-                      </CardText>
-                    </CardBody>
-                  </Col>
-                </Row>
-              </Container>
-            </Card>
-          </NavLink>
-        )
+        return <VideoCard key={item.id.videoId} video={item} />
       })
     }
     return (

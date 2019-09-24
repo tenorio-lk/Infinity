@@ -1,0 +1,51 @@
+@import '../../Styles/Common.scss';
+
+.video-card {
+    &__card {
+        margin-top: 1rem;
+        background-color: transparent;
+        max-width: $md-screen;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid transparent;
+        &:hover {
+            border: 1px solid rgba(0, 0, 0, 0.125);
+        }
+    }
+
+    &__layout {
+        &__row {
+            & div {
+                padding-left: 0;
+            }
+        }
+    }
+
+    &__body {
+        padding: 0;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: $small;
+        margin-bottom: 0.5rem;
+        @media (min-width: $sm-screen) {
+            font-size: $big;
+        }
+    }
+
+    &__description {
+        font-size: $extra-small;
+        @media (min-width: $sm-screen) {
+            font-size: $small;
+        }
+        @media (min-width: $sm-screen) {
+            font-size: $normal;
+        }
+    }
+}

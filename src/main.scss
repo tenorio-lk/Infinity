@@ -1,9 +1,11 @@
+@import './Styles/Common.scss';
+
 $theme-colors: (
-    "primary": #a7afa6,
-    "secondary": #e7e3ee,
-    "third": #c42200,
-    "fourth": #5c0100,
-    "fifth": #cea000
+    "primary": $primary,
+    "secondary": $secondary,
+    "third": $third,
+    "fourth": $fourth,
+    "fifth": $fifth
 );
 
 @import 'bootstrap/scss/bootstrap';
