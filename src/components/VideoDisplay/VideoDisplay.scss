@@ -16,8 +16,14 @@
     }
 
     &__info {
+        &--divider {
+            border-bottom: 1px dotted gray;
+        }
         &--container {
-            margin: 1rem;
+            margin-top: 1rem;
+            @media (min-width: $sm-screen) {
+                margin: 1rem;
+            }
         }
     }
 }

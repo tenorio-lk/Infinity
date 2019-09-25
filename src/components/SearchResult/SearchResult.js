@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Layout from '../Layout/Layout'
-import { basicData } from '../../helper/AuthAPI/AuthAPI'
+import { basicData } from '../../helper/AuthAPI'
 import VideoCard from '../VideoCard/VideoCard'
 import './SearchResult.scss'
 
