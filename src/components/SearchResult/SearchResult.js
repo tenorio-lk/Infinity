@@ -39,7 +39,7 @@ class searchResult extends Component {
 
     if (videos) {
       searchResult = videos.map(item => {
-        return <VideoCard key={item.id.videoId} video={item} />
+        return <VideoCard key={item.id.videoId} video={item} query={params.query} />
       })
     }
     return (

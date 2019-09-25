@@ -6,7 +6,11 @@ import './Layout.scss'
 
 const layout = props => (
     <Aux>
-        <Toolbar displaySearch={props.displaySearch} searchInitialValue={props.searchInitialValue}/>
+        <Toolbar
+            displaySearch={props.displaySearch}
+            searchInitialValue={props.searchInitialValue}
+            displayGoBack={props.showBackBotton}
+        />
         <main>
             {props.children}
         </main>

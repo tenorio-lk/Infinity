@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { Container, Row, Col, Card, CardBody, CardTitle, CardText } from 'reactstrap'
 import './VideoCard.scss'
 
-const videoCard = ({ video }) => {
+const videoCard = ({ video, query }) => {
     const ellipsisText = (maxLength, text) => {
         let ellipsis = ""
         if (text.length > maxLength) ellipsis = "..." 
@@ -12,7 +12,7 @@ const videoCard = ({ video }) => {
 
     return (
         <Card className="video-card__card">
-            <NavLink to={`/video-display/${video.id.videoId}`} >
+            <NavLink to={`/video-display/${video.id.videoId}/${query}`} >
                 <Container className="video-card__layout">
                     <Row className="video-card__layout__row">
                         <Col xs="5" md="4">

@@ -14,7 +14,7 @@ function App() {
       <Switch>
         <Route path="/" component={SearchPage} exact />
         <Route path="/search-result/:query" component={SearchResult} exact />
-        <Route path="/video-display/:videoId" component={VideoDisplay} exact />
+        <Route path="/video-display/:videoId/:query" component={VideoDisplay} exact />
         <Route component={PageNotFound} />
       </Switch>
     </BrowserRouter>
