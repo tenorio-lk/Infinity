@@ -6,6 +6,7 @@ import SearchInput from '../SearchInput/SearchInput'
 import { FavoriteVideos } from '../../assets/Svgs/Svgs'
 import { withRouter } from 'react-router-dom'
 import { Back } from '../../assets/Svgs/Svgs'
+import { InfinityLogoWhite } from '../../assets/Svgs/Svgs'
 import {
     Collapse,
     Navbar,
@@ -14,7 +15,9 @@ import {
     Nav,
     NavItem,
     NavLink,
-    Button } from 'reactstrap';
+    Button,
+    UncontrolledTooltip } from 'reactstrap';
+import './Toolbar.scss'
     
 class Toolbar extends Component {
     state = { isOpen: false }
@@ -37,14 +40,17 @@ class Toolbar extends Component {
         return (
         <Navbar color="fourth" dark expand="md">
             {goBack}
-            <NavbarBrand href="/">Infinity</NavbarBrand>
+            <NavbarBrand href="/" className="toolbar--logo"><InfinityLogoWhite /></NavbarBrand>
             <NavbarToggler onClick={this.toggleNav} />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
-                        <NavLink href="">
-                        <FavoriteVideos />
+                        <NavLink href="" id="favoriteVideos">
+                            <FavoriteVideos/>
                         </NavLink>
+                        <UncontrolledTooltip target="favoriteVideos">
+                            Favorite Videos
+                        </UncontrolledTooltip>
                     </NavItem>
                     <NavItem>
                         {searchInput}
