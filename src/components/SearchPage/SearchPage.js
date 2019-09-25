@@ -13,7 +13,6 @@ class searchPage extends Component {
                 <Container className="search-page__layout">
                     <Row>
                         <Col md="8" xl="4">
-                            {/* <img src={logo} alt="Infinity logo" className="search-page__image" /> */}
                             <InfinityLogo />
                         </Col>
                     </Row>
