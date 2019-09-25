@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import Layout from '../Layout/Layout'
 import VideoPlayer from '../VideoPlayer/VideoPlayer'
 import { basicData } from '../../helper/AuthAPI/AuthAPI'
-import Aux from '../../hoc/Aux/Aux'
+import { Container, Col, Row, /*Media*/ } from 'reactstrap'
+import VideoData from '../VideoData/VideoData'
+import './VideoDisplay.scss'
 
 const SUCCESFUL = 200
 
@@ -25,25 +27,31 @@ class videoDisplay extends Component {
 
     render() {
         const { videoInfo } = this.state
+        const { match : { params: { query } } } = this.props
         let player = null
         if (videoInfo) {
             player = 
-            <Layout searchInitialValue={videoInfo.snippet.title}>
-                <VideoPlayer videoID={videoInfo.id}/>
-                <h1>Now displaying video with the ID: {videoInfo.id}</h1>
-                <h1>Title: {videoInfo.snippet.title}</h1>
-                <h1>Description: {videoInfo.snippet.description}</h1>
-                <h1>Uploaded at: {new Date(videoInfo.snippet.publishedAt).toLocaleDateString()}</h1>
-                <h1>Chanel: {videoInfo.snippet.channelTitle}</h1>
-                <h2>Views: ({videoInfo.statistics.viewCount}) Likes: ({videoInfo.statistics.likeCount}) Dislikes: ({videoInfo.statistics.dislikeCount})</h2>
-                <h3>Comments Count: ({videoInfo.statistics.commentCount})</h3>
-            </Layout>
+            <Container className="video-display__layout">
+                <Row>
+                    <Col xs="12" className="video-display__video-container">
+                        <VideoPlayer videoID={videoInfo.id}/>
+                    </Col>
+                </Row>
+                <Row className="video-display__info--container">
+                    <Col xs="12">
+                      <VideoData
+                        videoSnippet={videoInfo.snippet}
+                        videoStatistics={videoInfo.statistics}
+                      />
+                    </Col>
+                </Row>
+            </Container>
         }
 
         return (
-            <Aux>
+            <Layout searchInitialValue={query} showBackBotton={true}>
                 {player}
-            </Aux>
+            </Layout>
         )
     }
 }

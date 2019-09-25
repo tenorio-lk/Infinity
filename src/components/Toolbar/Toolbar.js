@@ -4,7 +4,8 @@ import PropTypes from 'prop-types'
 import CurentTime from '../CurentTime/CurentTime'
 import SearchInput from '../SearchInput/SearchInput'
 import { FavoriteVideos } from '../../assets/Svgs/Svgs'
-
+import { withRouter } from 'react-router-dom'
+import { Back } from '../../assets/Svgs/Svgs'
 import {
     Collapse,
     Navbar,
@@ -12,8 +13,9 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink } from 'reactstrap';
-
+    NavLink,
+    Button } from 'reactstrap';
+    
 class Toolbar extends Component {
     state = { isOpen: false }
 
@@ -23,13 +25,18 @@ class Toolbar extends Component {
 
     render() {
         const { isOpen } = this.state
-        const { displaySearch, searchInitialValue } = this.props
+        const { displaySearch, displayGoBack, searchInitialValue, history } = this.props
         let searchInput = null
+        let goBack = null
 
         if (displaySearch) { searchInput = <SearchInput inicialValue={searchInitialValue} /> }
+        if (displayGoBack) {
+            goBack = <Button style={{marginRight: "0.5rem"}} size="sm" color="primary" onClick={() => history.goBack()}><Back /> </Button>
+        }
 
         return (
         <Navbar color="fourth" dark expand="md">
+            {goBack}
             <NavbarBrand href="/">Infinity</NavbarBrand>
             <NavbarToggler onClick={this.toggleNav} />
             <Collapse isOpen={isOpen} navbar>
@@ -54,12 +61,14 @@ class Toolbar extends Component {
 
 Toolbar.defaultProps = {
     searchInitialValue: "",
-    displaySearch: true
+    displaySearch: true,
+    displayGoBack: false
 }
 
 Toolbar.propTypes = {
     searchInitialValue: PropTypes.string,
-    displaySearch: PropTypes.bool
+    displaySearch: PropTypes.bool,
+    displayGoBack: PropTypes.bool
 }
 
-export default Toolbar
+export default withRouter(Toolbar)
