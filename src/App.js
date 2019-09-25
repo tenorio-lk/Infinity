@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.scss';
 
-// import MainContainer from './containers/MainContainer/MainContainer'
 import SearchPage from './components/SearchPage/SearchPage'
 import SearchResult from './components/SearchResult/SearchResult'
 import VideoDisplay from './components/VideoDisplay/VideoDisplay'
