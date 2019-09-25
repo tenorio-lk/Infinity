@@ -7,6 +7,7 @@ import {
     InputGroupAddon,
     Button,
     Input } from 'reactstrap'
+import './SearchInput.scss'
 
 class SearchInput extends Component {
     state = {
@@ -15,6 +16,7 @@ class SearchInput extends Component {
 
     componentDidMount = () => {
         const { inicialValue } = this.props
+        if (inicialValue.length === 0 ) this.nameInput.focus();
         this.setState({ query: inicialValue })
     }
 
@@ -29,7 +31,7 @@ class SearchInput extends Component {
         return (
             <form>
                 <InputGroup>
-                    <Input placeholder="Search Video" value={query} onChange={this.handleChange}/>
+                    <Input innerRef={(input) => this.nameInput = input } className="search-input--input" placeholder="Search Video" value={query} onChange={this.handleChange}/>
                     <InputGroupAddon addonType="append">
                         <NavLink to={`/search-result/${query}`}>
                             <Button color="third">

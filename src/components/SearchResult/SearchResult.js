@@ -23,7 +23,9 @@ class searchResult extends Component {
   fetchQuery = async query => {
     const response = await basicData.get('/search', {
       params: {
-        q: query
+        q: query,
+        type: "video",
+        maxResults: 20
       }
     })
 
