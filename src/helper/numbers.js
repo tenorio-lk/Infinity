@@ -31,3 +31,7 @@ export const nFormatter = (num) => {
 export const linesCount = (text) => {
     return (text.match(/\n/g) || []).length + 2
 }
+
+export const spacesCount = (text) => {
+    return (text.match(/ /g) || []).length
+}
