@@ -12,12 +12,14 @@ class searchResult extends Component {
   }
 
   componentDidMount = () => {
-    const { match: { params } } = this.props
-
-    this.fetchQuery(params.query)
-    this.setState({
-      videos: null
-    })
+    const { favoriteList } = this.props
+    if (favoriteList) {
+      this.setState({ videos: JSON.parse(localStorage.getItem('favList')) })
+    }
+    else {
+      const { match: { params } } = this.props
+      this.fetchQuery(params.query)
+    }
   }
 
   fetchQuery = async query => {
@@ -36,16 +38,20 @@ class searchResult extends Component {
 
   render() {
     const { videos } = this.state
-    const { match: { params } } = this.props
+    const { favoriteList } = this.props
+    let query = " "
+    if (!favoriteList) {
+      query = this.props.match.params.query
+    }
     let searchResult = null
 
     if (videos) {
       searchResult = videos.map(item => {
-        return <VideoCard key={item.id.videoId} video={item} query={params.query} />
+        return <VideoCard key={item.id.videoId} video={item} query={query} favList={favoriteList} />
       })
     }
     return (
-      <Layout searchInitialValue={params.query}>
+      <Layout searchInitialValue={query}>
         <div className="search-Result__list">
           {searchResult}
         </div>

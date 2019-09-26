@@ -68,15 +68,18 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 At the end of this project I'm pretty happy with the final result, the design and every component used apart from the libraries was fully developed by me.
 
-In terms on the requirements stablished by CreativeDrive all the basic requirements were fully satisfied, and also some optionals like: Using SASS for the html styling and persist the data when the user reloads the page.
+In terms on the requirements stablished by CreativeDrive all the basic requirements were fully satisfied, and also the optionals like: Using SASS for the html styling, persist the data when the user reloads the page and add videos on the Search Page to a favorite list, that can be display with the start on the nav bar using localStorage.
 
-Because of time reasons I was not able to implement Mobx library in order to save the videos for the favorite videos list and persist then if the user reloads the page, of course if there was more time to finished the project, I would gladly done this requirement.
+Because of time reasons I was not able to fully comment the code, if I had some more hours I would gladly supply this clean code feature, also I could not implement the Design Pattern.
 
 ### Libraries used
 
 Library| Axios | Reactstrap 	| node-sass | React | React-autocomplete | React-dom | React-scripts
 ---------	|---------|---------|---------|---------|---------|---------|---------|
  Version    | 	0.18.0	| 	 8.0.1	| 		4.12	| 16.9.0 | 1.8.1 | 16.9.0 |3.1.1
+
+ # INFINITY 
+ ## Fully developed by Diego Tenorio Solís.
 
 
 
