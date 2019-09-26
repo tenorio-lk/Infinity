@@ -1,0 +1,43 @@
+@import '../../Styles/Common.scss';
+
+.video-data {
+
+    &--title {
+        font-size: $big;
+        font-weight: 500;
+    }
+
+    &--statistics {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border-bottom: 1px dotted gray;
+        margin-bottom: 1rem;
+    }
+
+    &--views {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 1rem;
+    }
+
+    &--evaluation {
+        display: flex;
+        justify-content: space-between;
+        width: 10rem;
+        @media(min-width: $sm-screen) {
+            margin-right: 10%;
+        }
+    }
+
+    &--description {
+        resize: none;
+        border: none;
+        background-color: $main-background;
+        width: 100%;
+        font-size: $normal;
+        &:hover {
+            cursor: default;
+        }
+    }
+}

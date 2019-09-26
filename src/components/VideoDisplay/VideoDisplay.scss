@@ -1,0 +1,29 @@
+@import '../../Styles/Common.scss';
+
+.video-display {
+    &__layout {
+        max-width: 100vw;
+    }
+
+    &__video-container {
+        position: relative;
+        width: 100%;
+        padding: 38.7% 0 0 0;
+
+        & div {
+            height: 100%;
+        }
+    }
+
+    &__info {
+        &--divider {
+            border-bottom: 1px dotted gray;
+        }
+        &--container {
+            margin-top: 1rem;
+            @media (min-width: $sm-screen) {
+                margin: 1rem;
+            }
+        }
+    }
+}
