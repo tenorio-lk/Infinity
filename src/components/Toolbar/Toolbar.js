@@ -45,7 +45,7 @@ class Toolbar extends Component {
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
-                        <NavLink href="" id="favoriteVideos">
+                        <NavLink href="/favorite-videos" id="favoriteVideos">
                             <FavoriteVideos/>
                         </NavLink>
                         <UncontrolledTooltip target="favoriteVideos">

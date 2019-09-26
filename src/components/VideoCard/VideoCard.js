@@ -1,13 +1,20 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Container, Row, Col, Card, CardBody, CardTitle, CardText } from 'reactstrap'
+import { Container, Row, Col, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap'
 import './VideoCard.scss'
 
-const videoCard = ({ video, query }) => {
+const videoCard = ({ video, query, favList }) => {
     const ellipsisText = (maxLength, text) => {
         let ellipsis = ""
         if (text.length > maxLength) ellipsis = "..." 
         return text.slice(0, maxLength) + ellipsis
+    }
+
+    const saveFavorite = (videoInfo) => {
+        let favList = localStorage.getItem('favList')
+        favList ? favList = JSON.parse(favList) : favList = []
+        favList.push(videoInfo)
+        localStorage.setItem('favList', JSON.stringify(favList))
     }
 
     return (
@@ -31,6 +38,12 @@ const videoCard = ({ video, query }) => {
                     </Row>
                 </Container>
             </NavLink>
+            {favList ? 
+                null : 
+                <Button className="video-card--add" color="primary" onClick={() => saveFavorite(video)}>
+                    Add Favorite
+                </Button>
+            }
         </Card>
     )
 }

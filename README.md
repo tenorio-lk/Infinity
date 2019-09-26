@@ -1,8 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# INFINITY
+
+React project bootstrapped with [Create React App](https://github.com/facebook/create-react-app), which uses YouTubeAPI where you can filter and play videos from YouTube.
+
+The application is based on 3 diferent views: Search / Search results / Video Display with the help of the library `react-router-dom` in order to simulate a multiple page application.
+
+You can look the deploy version of the project fron [this link](https://frosty-stallman-f584d7.netlify.com/) which was uploaded to Netlify.
+
+***
+
+## Pages
+
+Every page has a Navigation bar with 3 elements: the infinity logo, a search input to filter videos on the Search Results and Video Display pages and the computers current time, also every page has a responsive design in order to make it accessible from desktops, laptops and mobile devices.
+Also the data needed for every page lies on the link so it doesn't matter if you reload the page it won't loose any data.
+### Search
+
+Main page where you can search for videos, the input has an autocomplete property which give the user video titles suggestions everytime the user presses the space key.
+### Search Results
+
+When the user hits enter or clicks the search botton on the main page, hi is redired to this page, where he can look 20 videos that match the query inputed by the user, displaying the image preview, title and description of the video with a maximun of 125 characters.
+
+### Video Display
+
+Last but not least page dispayed when the user clicks on a video from the search results page, This page displays the YouTube video selected with the title, views, publication date, likes-dislikes, description, and the first 20 comments of the video.
+
+***
 
 ## Available Scripts
 
-In the project directory, you can run:
+As it was mentioned the application is  [available on Netlify](https://frosty-stallman-f584d7.netlify.com/) but you can also clone it on you computer; as it build with `react-react-app` you can run the following commads on the project's directory:
 
 ### `npm start`
 
@@ -37,33 +62,24 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+***
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Final thoughts
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+At the end of this project I'm pretty happy with the final result, the design and every component used apart from the libraries was fully developed by me.
 
-### Code Splitting
+In terms on the requirements stablished by CreativeDrive all the basic requirements were fully satisfied, and also the optionals like: Using SASS for the html styling, persist the data when the user reloads the page and add videos on the Search Page to a favorite list, that can be display with the start on the nav bar using localStorage.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Because of time reasons I was not able to fully comment the code, if I had some more hours I would gladly supply this clean code feature, also I could not implement the Design Pattern.
 
-### Analyzing the Bundle Size
+### Libraries used
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Library| Axios | Reactstrap 	| node-sass | React | React-autocomplete | React-dom | React-scripts
+---------	|---------|---------|---------|---------|---------|---------|---------|
+ Version    | 	0.18.0	| 	 8.0.1	| 		4.12	| 16.9.0 | 1.8.1 | 16.9.0 |3.1.1
 
-### Making a Progressive Web App
+ # INFINITY 
+ ## Fully developed by Diego Tenorio Solís.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# youtube-api
